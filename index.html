@@ -1,0 +1,1712 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>NCR UASI Overview</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <meta name='description' content='Overview of National Capital Region UASI'>
+
+    <meta name='keywords' content='NCR, UASI'>
+
+    <meta chartset='UTF-8'>
+
+  </head>
+
+    <link rel="stylesheet" type="text/css" href="http://visapi-gadgets.googlecode.com/svn/trunk/barsofstuff/bos.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="bos.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawVisualization);
+
+
+//Chart 1*******************************************
+
+function drawChart1() {
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "NCR Award", {role: 'style'}, {role: 'tooltip'} ],
+  ["2002", 0, '#183152', '$0'],
+  ["2003", 60490851, '#183152', '$60,490,851' ],
+  ["2004", 29128623, '#183152', '$29,128,623' ],
+  ["2005", 77500000, '#183152', '$77,500,000' ],
+  ["2006", 46470000, '#183152', '$46,470,000' ],
+  ["2007", 61650000, '#183152', '$61,650,000' ],
+  ["2008", 59513518, '#183152', '$59,513,518' ],
+  ["2009", 58006500, '#183152', '$58,006,500' ],
+  ["2010", 59392477, '#183152', '$59,392,477' ],
+  ["2011", 59392477, '#183152', '$59,392,477' ],
+  ["2012", 51839027, '#183152', '$51,839,027' ],
+  ["2013", 51839027, '#183152', '$51,839,027' ],
+  ["2014", 53000000, '#183152', '$53,000,000' ],
+  ['2015', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards by Year',
+    
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+          
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+            title: '(move mouse over bars for NCR UASI investment amounts)',
+
+  },
+  
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+
+      
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart1'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart2**********************************************
+
+
+function drawChart2() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Maryland Specific", {role: 'style'}, {role: 'tooltip'}, 'Non-Maryland Specific', {role: 'style'}, {role: 'tooltip'} ],
+  //["2002", 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #183152', '$0'],
+  //["2003", 0, 'fill-color: #2980B9', '$0', 60490851, 'fill-color: #183152', 'Regional: $60,490,851' ],
+  //["2004", 0, 'fill-color: #2980B9', '$0', 29128623, 'fill-color: #183152', 'Regional: $29,128,623' ],
+  //["2005", 0, 'fill-color: #2980B9', '$0', 77500000, 'fill-color: #183152', 'Regional: $77,500,000' ],
+  //["2006", 0, 'fill-color: #2980B9', '$0', 46470000, 'fill-color: #183152', 'Regional: $46,470,000' ],
+  //["2007", 0, 'fill-color: #2980B9', '$0', 61650000, 'fill-color: #183152', 'Regional: $61,650,000' ],
+  ["2008", 10389114, 'fill-color: #2980B9', 'Maryland Specific: $10,389,114', 49411386, 'fill-color: #183152', 'Non-Maryland Specific: $49,411,386' ],
+  ["2009", 10215341, 'fill-color: #2980B9', 'Maryland Specific: $10,215,341', 47791159, 'fill-color: #183152', 'Non-Maryland Specific: $47,911,159' ],
+  ["2010", 6653372, 'fill-color: #2980B9', 'Maryland Specific: $6,653,372', 52739105, 'fill-color: #183152', 'Non-Maryland Specific: $52,739,105' ],
+  ["2011", 8292388, 'fill-color: #2980B9', 'Maryland Specific: $8,292,388', 51100089, 'fill-color: #183152', 'Non-Maryland Specific: $51,100,189' ],
+  ["2012", 10421153, 'fill-color: #2980B9', 'Maryland Specific: $10,421,153', 41417874, 'fill-color: #183152', 'Non-Maryland Specific: $41,417,874' ],
+  ["2013", 10891319, 'fill-color: #2980B9', 'Maryland Specific: $10,891,319', 41356014, 'fill-color: #183152', 'Non-Maryland Specific: $41,356,014' ],
+  ["2014", 11610818, 'fill-color: #2980B9', 'Maryland Specific: $11,610,818', 41052340, 'fill-color: #183152', 'Non-Maryland Specific: $41,052,340' ],
+  //['2015', 0, 'fill-color: #2980B9', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards by Year',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+          title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+
+      
+    
+  };
+
+  console.log($(window).width() * 0.6);
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart2'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart3*******************************************
+
+function drawChart3() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ['Year', 'Maryland', {role: 'style'}, {role: 'tooltip'}, 'Virginia', {role: 'style'}, {role: 'tooltip'}, 'District of Columbia', {role: 'style'}, {role: 'tooltip'},'Regional', {role: 'style'}, {role: 'tooltip'} ],
+  //['2002', 0, 'fill-color: #183152', '$0', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0'],
+  //['2003', 60490851, 'fill-color: #183152', 'Regional: $60,490,851', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0' ],
+  //['2004', 29128623, 'fill-color: #183152', 'Regional: $29,128,623', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0' ],
+  //['2005', 77500000, 'fill-color: #183152', 'Regional: $77,500,000', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0' ],
+  //['2006', 46470000, 'fill-color: #183152', 'Regional: $46,470,000', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0' ],
+  //['2007', 61650000, 'fill-color: #183152', 'Regional: $61,650,000', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0' ],
+  ['2008', 10389114, 'fill-color: #2980B9', 'Maryland Specific: $10,389,114', 10164195, 'fill-color: #3498DB', 'Virginia Specific: $10,164,195', 5806833, 'fill-color: #92CDCF', 'District of Columbia Specific: $5,806,883' , 33440308, 'fill-color: #183152', 'Regional: $33,440,308'],
+  ['2009',  10215341, 'fill-color: #2980B9', 'Maryland Specific: $10,215,341', 8054522, 'fill-color: #3498DB', 'Virginia Specific: $8,054,522', 5616394, 'fill-color: #92CDCF', 'District of Columbia Specific: $5,616,394', 34120243, 'fill-color: #183152', 'Regional: $34,120,243'],
+  ['2010', 6653372, 'fill-color: #2980B9', 'Maryland Specific: $6,653,372', 9248330, 'fill-color: #3498DB', 'Virginia Specific: $9,248,330',  6138160, 'fill-color: #92CDCF', 'District of Columbia Specific: $6,138,160',37352615, 'fill-color: #183152', 'Regional: $37,352,615' ],
+  ['2011', 8292388, 'fill-color: #2980B9', 'Maryland Specific: $8,292,388', 7441406, 'fill-color: #3498DB', 'Virginia Specific: $7,441,406',  4547509, 'fill-color: #92CDCF', 'District of Columbia Specific: $4,547,509', 39111174, 'fill-color: #183152', 'Regional: $39,111,174' ],
+  ['2012', 10421153, 'fill-color: #2980B9', 'Maryland Specific: $10,421,153', 13518053, 'fill-color: #3498DB', 'Virginia Specific: $13,518,053',  7618267, 'fill-color: #92CDCF', 'District of Columbia Specific: $7,618,267', 20281555, 'fill-color: #183152', 'Regional: $20,281,555' ],
+  ['2013', 10891319, 'fill-color: #2980B9', 'Maryland Specific: $10,891,319', 10364576, 'fill-color: #3498DB', 'Virginia Specific: $10,364,576' , 5020422, 'fill-color: #92CDCF', 'District of Columbia Specific: $5,020,442', 25562690, 'fill-color: #183152', 'Regional: $25,562,690' ],
+  ['2014', 11610818, 'fill-color: #2980B9', 'Maryland Specific: $11,610,818', 10810446, 'fill-color: #3498DB', 'Virginia Specific: $10,810,446' , 8529864, 'fill-color: #92CDCF', 'District of Columbia Specific: $8,529,864', 21712030, 'fill-color: #183152', 'Regional: $21,712,030' ],
+  //['2015', 0, 'fill-color: #183152','$0', 0, 'fill-color: #3498DB', '$0', 0, 'fill-color: #2980B9', '$0', 0, 'fill-color: #92CDCF', '$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards by Year',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: '85%'},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+          title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart3'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart4*****************************************
+
+function drawChart4() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Maryland", {role: 'style'}, {role: 'tooltip'} ],
+  
+  ["2008", 10389114, 'fill-color: #183152', 'Maryland: $10,389,114'],
+  ["2009", 10215341, 'fill-color: #183152', 'Maryland: $10,215,341' ],
+  ["2010", 6653372, 'fill-color: #183152', 'Maryland: $6,653,372'],
+  ["2011", 8292388, 'fill-color: #183152', 'Maryland: $8,292,388' ],
+  ["2012", 10421153, 'fill-color: #183152', 'Maryland; $10,421,153' ],
+  ["2013", 10891319, 'fill-color: #183152', 'Maryland: $10,891,319' ],
+  ["2014", 11610818, 'fill-color: #183152', 'Maryland: $11,610,818'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {maxValue: 12000000,
+        title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart4'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart5*******************************************
+
+function drawChart5() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Local", {role: 'style'}, {role: 'tooltip'}, 'State', {role: 'style'}, {role: 'tooltip'} ],
+  
+  ["2008", 900430, 'fill-color: #2980B9', 'State: $900,430', 9488684, 'fill-color: #183152', 'Local: $9,488,684'  ],
+  ["2009", 2116391, 'fill-color: #2980B9', 'State: $2,116,391', 8098450, 'fill-color: #183152', 'Local: $8,098,450' ],
+  ["2010", 1465136, 'fill-color: #2980B9', 'State: $1,465,136', 5188236, 'fill-color: #183152', 'Local: $5,188,236' ],
+  ["2011", 2261133, 'fill-color: #2980B9', 'State: $2,261,133', 6031255, 'fill-color: #183152', 'Local: $6,031,255' ],
+  ["2012", 2315829, 'fill-color: #2980B9', 'State: $2,315,829', 8105324, 'fill-color: #183152', 'Local: $8,105,324' ],
+  ["2013", 2168783, 'fill-color: #2980B9', 'State: $2,168,783', 8662536, 'fill-color: #183152', 'Local: $8,662,536' ],
+  ["2014", 2924548, 'fill-color: #2980B9', 'State: $2,924,548', 8686270, 'fill-color: #183152', 'Local: $8,686,270' ],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#2980B9','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland by Subgrantee',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+          title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart5'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart6*******************************************
+
+function drawChart6() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Personnel", {role: 'style'}, {role: 'tooltip'}],
+  
+  ["2008", 1882874, 'fill-color: #183152', 'Personnel: $1,882,874'],
+  ["2009", 3348931, 'fill-color: #183152', 'Personnel: $3,348,931'],
+  ["2010", 1776469, 'fill-color: #183152', 'Personnel: $1,774,469'],
+  ["2011", 1781351, 'fill-color: #183152', 'Personnel: $1,781,351'],
+  ["2012", 3462951, 'fill-color: #183152', 'Personnel: $3,462,951'],
+  ["2013", 3497603, 'fill-color: #183152', 'Personnel: $3,497,603'],
+  ["2014", 3997461, 'fill-color: #183152', 'Personnel: $3,997,461'],
+  //['2015', 0, 'fill-color: #3498DB', '$0', 0, '#005866','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland by Capability - Personnel',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 24,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {maxValue: 12000000,
+          title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart6'));
+
+  chart.draw(data, options);
+
+}
+
+
+//Chart7********************************************
+
+function drawChart7() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Personnel", {role: 'style'}, {role: 'tooltip'}, 'Interoperability/Data Sharing', {role: 'style'}, {role: 'tooltip'}],
+  
+  ["2008", 1882874, 'fill-color: #183152', 'Personnel: $1,882,874', 2655107, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,655,107'],
+  ["2009", 3348931, 'fill-color: #183152', 'Personnel: $3,348,931', 2577709, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,577,709'],
+  ["2010", 1776469, 'fill-color: #183152', 'Personnel: $1,774,469', 172336, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $172,336'],
+  ["2011", 1781351, 'fill-color: #183152', 'Personnel: $1,781,351', 2110944, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,110,944'],
+  ["2012", 3462951, 'fill-color: #183152', 'Personnel: $3,462,951', 2581554, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,581,554'],
+  ["2013", 3497603, 'fill-color: #183152', 'Personnel: $3,497,603', 1210241, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,210,241'],
+  ["2014", 3997461, 'fill-color: #183152', 'Personnel: $3,997,461', 1818050, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,818,050'],
+  //['2015', 0, 'fill-color: #3498DB', '$0', 0, '#005866','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland by Capability - Interoperability/Data Sharing',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 24,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {maxValue: 12000000,
+        title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart7'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart8*******************************************
+
+function drawChart8() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Personnel", {role: 'style'}, {role: 'tooltip'}, 'Interoperability/Data Sharing', {role: 'style'}, {role: 'tooltip'}, 'Emergency Response Equipment/Capabilities' , {role: 'style'}, {role: 'tooltip'}],
+  
+  ["2008", 1882874, 'fill-color: #183152', 'Personnel: $1,882,874', 2655107, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,655,107', 5676775, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $5,676,755'],
+  ["2009", 3348931, 'fill-color: #183152', 'Personnel: $3,348,931', 2577709, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,577,709', 3392985, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $3,392,985'],
+  ["2010", 1776469, 'fill-color: #183152', 'Personnel: $1,774,469', 172336, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $172,336', 631023, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $631,023'],
+  ["2011", 1781351, 'fill-color: #183152', 'Personnel: $1,781,351', 2110944, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,110,944', 3917646, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $3,917,646'],
+  ["2012", 3462951, 'fill-color: #183152', 'Personnel: $3,462,951', 2581554, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,581,554', 2327040, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $2,327,040'],
+  ["2013", 3497603, 'fill-color: #183152', 'Personnel: $3,497,603', 1210241, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,210,241', 1714100, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $1,714,100'],
+  ["2014", 3997461, 'fill-color: #183152', 'Personnel: $3,997,461', 1818050, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,818,050', 913000, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $913,000'],
+  //['2015', 0, 'fill-color: #3498DB', '$0', 0, '#005866','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland by Capability - Emergency Response Equipment',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 24,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {maxValue: 12000000,
+        title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart8'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart9*****************************************
+
+function drawChart9() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Personnel", {role: 'style'}, {role: 'tooltip'}, 'Interoperability/Data Sharing', {role: 'style'}, {role: 'tooltip'}, 'Emergency Response Equipment/Capabilities' , {role: 'style'}, {role: 'tooltip'}, 'TCL' , {role: 'style'}, {role: 'tooltip'}, 'Facility Upgrade', {role: 'style'}, {role: 'tooltip'}],
+  
+  ["2008", 1882874, 'fill-color: #183152', 'Personnel: $1,882,874', 2655107, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,655,107', 5676775, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $5,676,755', 0, 'fill-color: #3498DB', 'TCL: $0', 0, 'fill-color: #ABC8E2', 'Facility Upgrade: $0'],
+  ["2009", 3348931, 'fill-color: #183152', 'Personnel: $3,348,931', 2577709, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,577,709', 3392985, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $3,392,985', 0, 'fill-color: #3498DB', 'TCL: $0', 895717, 'fill-color: #ABC8E2', 'Facility Upgrade: $895,717'],
+  ["2010", 1776469, 'fill-color: #183152', 'Personnel: $1,774,469', 172336, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $172,336', 631023, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $631,023', 0, 'fill-color: #3498DB', 'TCL: $0', 2183079, 'fill-color: #ABC8E2', 'Facility Upgrade: $2,183,079'],
+  ["2011", 1781351, 'fill-color: #183152', 'Personnel: $1,781,351', 2110944, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,110,944', 3917646, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $3,917,646', 0, 'fill-color: #3498DB', 'TCL: $0', 0, 'fill-color: #ABC8E2', 'Facility Upgrade: $0'],
+  ["2012", 3462951, 'fill-color: #183152', 'Personnel: $3,462,951', 2581554, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,581,554', 2327040, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $2,327,040', 0, 'fill-color: #3498DB', 'TCL: $0', 969608, 'fill-color: #ABC8E2', 'Facility Upgrade: $969,608'],
+  ["2013", 3497603, 'fill-color: #183152', 'Personnel: $3,497,603', 1210241, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,210,241', 1714100, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $1,714,100', 0, 'fill-color: #3498DB', 'TCL: $0', 0, 'fill-color: #ABC8E2', 'Facility Upgrade: $0'],
+  ["2014", 3997461, 'fill-color: #183152', 'Personnel: $3,997,461', 1818050, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,818,050', 913000, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $913,000', 0, 'fill-color: #3498DB', 'TCL: $0', 80000, 'fill-color: #ABC8E2', 'Facility Upgrade: $80,000'],
+  //['2015', 0, 'fill-color: #3498DB', '$0', 0, '#005866','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland by Capability - Facility Upgrade',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 24,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {maxValue: 12000000,
+        title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart9'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart10********************************************
+
+function drawChart10() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Personnel", {role: 'style'}, {role: 'tooltip'}, 'Interoperability/Data Sharing', {role: 'style'}, {role: 'tooltip'}, 'Emergency Response Equipment/Capabilities' , {role: 'style'}, {role: 'tooltip'}, 'TCL' , {role: 'style'}, {role: 'tooltip'}, 'Facility Upgrade', {role: 'style'}, {role: 'tooltip'}, 'Traffic/Evacuation' , {role: 'style'}, {role: 'tooltip'}, 'Other' , {role: 'style'}, {role: 'tooltip'}, 'Maryland ERS' , {role: 'style'}, {role: 'tooltip'}, 'Volunteer Coordination' , {role: 'style'}, {role: 'tooltip'}, 'Tactical Response' , {role: 'style'}, {role: 'tooltip'}],
+  
+  ["2008", 1882874, 'fill-color: #183152', 'Personnel: $1,882,874', 2655107, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,655,107', 5676775, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $5,676,755', 0, 'fill-color: #3498DB', 'TCL: $0', 0, 'fill-color: #ABC8E2', 'Facility Upgrade: $0', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 174358, 'fill-color: #C4D7ED', 'Other: $174,358', 0, 'fill-color: #92CDCF', 'ERS: $0', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0'],
+  ["2009", 3348931, 'fill-color: #183152', 'Personnel: $3,348,931', 2577709, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,577,709', 3392985, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $3,392,985', 0, 'fill-color: #3498DB', 'TCL: $0', 895717, 'fill-color: #ABC8E2', 'Facility Upgrade: $895,717', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 0, 'fill-color: #C4D7ED', 'Other: $1,202,706', 0, 'fill-color: #92CDCF', 'ERS: $0', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0'],
+  ["2010", 1776469, 'fill-color: #183152', 'Personnel: $1,774,469', 172336, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $172,336', 631023, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $631,023', 0, 'fill-color: #3498DB', 'TCL: $0', 2183079, 'fill-color: #ABC8E2', 'Facility Upgrade: $2,183,079', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 1890465, 'fill-color: #C4D7ED', 'Other: $1,890,465', 0, 'fill-color: #92CDCF', 'ERS: $0', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0'],
+  ["2011", 1781351, 'fill-color: #183152', 'Personnel: $1,781,351', 2110944, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,110,944', 3917646, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $3,917,646', 0, 'fill-color: #3498DB', 'TCL: $0', 0, 'fill-color: #ABC8E2', 'Facility Upgrade: $0', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 482446, 'fill-color: #C4D7ED', 'Other: $482,446', 0, 'fill-color: #92CDCF', 'ERS: $0', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0'],
+  ["2012", 3462951, 'fill-color: #183152', 'Personnel: $3,462,951', 2581554, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $2,581,554', 2327040, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $2,327,040', 0, 'fill-color: #3498DB', 'TCL: $0', 969608, 'fill-color: #ABC8E2', 'Facility Upgrade: $969,608', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 80000, 'fill-color: #C4D7ED', 'Other: $80,000', 1000000, 'fill-color: #92CDCF', 'Maryland ERS: $1,000,000', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0' ],
+  ["2013", 3497603, 'fill-color: #183152', 'Personnel: $3,497,603', 1210241, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,210,241', 1714100, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $1,714,100', 0, 'fill-color: #3498DB', 'TCL: $0', 0, 'fill-color: #ABC8E2', 'Facility Upgrade: $0', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 526475, 'fill-color: #C4D7ED', 'Other: $526,475', 3942900, 'fill-color: #92CDCF', 'Maryland ERS: $3,942,900', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0' ],
+  ["2014", 3997461, 'fill-color: #183152', 'Personnel: $3,997,461', 1818050, 'fill-color: #2980B9', 'Interoperability/Data Sharing: $1,818,050', 913000, 'fill-color: #375d81', 'Emergency Response Equipment/Capabilities: $913,000', 0, 'fill-color: #3498DB', 'TCL: $0', 80000, 'fill-color: #ABC8E2', 'Facility Upgrade: $80,000', 0, 'fill-color: #5D8FA6', 'Traffic/Evacuation: $0', 360000, 'fill-color: #C4D7ED', 'Other: $360,000', 4442307, 'fill-color: #92CDCF', 'Maryland ERS: $4,442,307', 0, 'fill-color: #E1E6FA', 'Volunteer Coordination: $0', 0, 'fill-color: #FCFFF5', 'Tactical Response: $0' ],
+  //['2015', 0, 'fill-color: #3498DB', '$0', 0, '#005866','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Urban Area Security Initiative (UASI) Awards to Maryland by Capability',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 24,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {maxValue: 12000000,
+        title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart10'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart11******************************************
+
+function drawChart11() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Project", "Amount", {role: 'style'}, {role: 'tooltip'} ],
+  
+  ["TECC Kits/Training", 1753068, 'fill-color: #183152', 'Tactical Emergency Casualty Care Kits and Training: $1,753,068'],
+  ["ERS Staff", 1686700, 'fill-color: #183152', 'ERS Staff: $1,686,700' ],
+  ["Training and Exercises", 744000, 'fill-color: #183152', 'Training and Exercises: $744,000'],
+  ["Mobile Evacuation Platforms", 624000, 'fill-color: #183152', 'Mobile Evacuation Platforms: $624,000' ],
+  ["Tactical Equipment", 414625, 'fill-color: #183152', 'Tactical Equipment: $414,625' ],
+  ["EMS UTVs", 384000, 'fill-color: #183152', 'EMS Utility Terrain Vehicles: $384,000' ],
+  ["DEMSTel", 300000, 'fill-color: #183152', 'DEMSTEL Enhancement: $300,000'],
+  ["EMT App", 171875, 'fill-color: #183152', 'Mobile Application for Responders: $171,875'],
+  ["Medical Cache", 153600, 'fill-color: #183152', 'Medical Cache Sustainment: $153,600'],
+  ["FirstWatch", 96000, 'fill-color: #183152', 'FirstWatch System Monitoring: $96,000'],
+  ["EMRC MD-DC Phones", 60000, 'fill-color: #183152', 'EMRC Maryland-DC Phones: $60,000'],
+  //["2014", 0, 'fill-color: #183152', '$0', 53000000, 'fill-color: #183152', 'Regional: $53,000,000' ],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'FY14 Maryland Emergency Response System Projects',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 24,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '25%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart11'));
+
+  chart.draw(data, options);
+
+}
+
+
+
+//Chart19*******************************************
+
+function drawChart19() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Radio Cache", {role: 'style'}, {role: 'tooltip'} ],
+  
+  ["2003", 5526783, 'fill-color: #183152', 'FY03 Radio Cache: $5,526,783'],
+  ["2004", 75565, 'fill-color: #183152', 'FY04 Radio Cache: $75,565' ], 
+  ["2005", 161795, 'fill-color: #183152', 'FY05 Radio Cache: $161,795'],
+  ["2006", 251400, 'fill-color: #183152', 'FY06 Radio Cache: $251,400' ],
+  ["2007", 532000, 'fill-color: #183152', 'FY07 Radio Cache: $532,000' ],
+  ["2008", 229084, 'fill-color: #183152', 'FY08 Radio Cache: $229,084' ],
+  ["2009", 538916, 'fill-color: #183152', 'FY09 Radio Cache: $838,916' ],
+  ["2010", 118595, 'fill-color: #183152', 'FY10 Radio Cache: $118,595' ],
+  ["2011", 274105, 'fill-color: #183152', 'FY11 Radio Cache: $274,105' ],
+  ["2012", 1075444, 'fill-color: #183152', 'FY12 Radio Cache: $1,075,444' ],
+  ["2013", 1065975, 'fill-color: #183152', 'FY13 Radio Cache: $1,065,975' ],
+  ["2014", 418405, 'fill-color: #183152', 'FY14 Radio Cache: $418,405'], 
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Radio Cache Investment FY2003-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart19'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart20*****************************************
+
+function drawChart20() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "NCRNet", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  ["2004", 785321, 'fill-color: #183152', 'FY04 NCRNet: $785,321' ],
+  ["2005", 2522895, 'fill-color: #183152', 'FY05 NCRNet: $2,522,895'],
+  ["2006", 1227414, 'fill-color: #183152', 'FY06 NCRNet: $1,227,414' ],
+  ["2007-2008", 6810769, 'fill-color: #183152', 'FY07-FY08 NCRNet: $6,810,769' ],
+  //["2008", 229084, 'fill-color: #183152', 'FY08: $229,084' ],
+  ["2009", 4647234, 'fill-color: #183152', 'FY09 NCRNet: $4,647,234' ],
+  ["2010", 4556529, 'fill-color: #183152', 'FY10 NCRNet: $4,556,529' ],
+  ["2011", 2415150, 'fill-color: #183152', 'FY11 NCRNet: $2,415,150' ],
+  ["2012", 1263000, 'fill-color: #183152', 'FY12 NCRNet: $1,263,000' ],
+  ["2013", 2748608, 'fill-color: #183152', 'FY13 NCRNet: $2,748,608' ],
+  ["2014", 2996170, 'fill-color: #183152', 'FY14 NCRNet: $2,996,170'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCRNet Investment FY2004-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart20'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart21********************************************
+
+function drawChart21() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Patient Tracking", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  ["2004", 2070751, 'fill-color: #183152', 'FY04 Patient Tracking: $2,070,751' ],
+  ["2005", 681161, 'fill-color: #183152', 'FY05 Patient Tracking: $681,161'],
+  ["2006-2009", 739742, 'fill-color: #183152', 'FY06-FY09 Patient Tracking: $739,742' ],
+  //["2007-2008", 6810769, 'fill-color: #183152', 'FY07-FY08: $6,810,769' ],
+  //["2008", 229084, 'fill-color: #183152', 'FY08: $229,084' ],
+  //["2009", 4647234, 'fill-color: #183152', 'FY09: $4,647,234' ],
+  ["2010", 2022723, 'fill-color: #183152', 'FY10 Patient Tracking: $2,022,723' ],
+  ["2011", 2722300, 'fill-color: #183152', 'FY11 Patient Tracking: $2,722,300' ],
+  ["2012", 2776263, 'fill-color: #183152', 'FY12 Patient Tracking: $2,776,263' ],
+  ["2013", 1574263, 'fill-color: #183152', 'FY13 Patient Tracking: $1,574,263' ],
+  ["2014", 528955, 'fill-color: #183152', 'FY14 Patient Tracking: $528,955'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Patient Tracking Investment FY2004-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+    },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart21'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart22*****************************************
+
+function drawChart22() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "CAD2CAD", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  ["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08 CAD2CAD: $641,196' ],
+  //["2008", 229084, 'fill-color: #183152', 'FY08: $229,084' ],
+  ["2009-2010", 1103479, 'fill-color: #183152', 'FY09-FY10 CAD2CAD: $1,103,479' ],
+  //["2010", 4556529, 'fill-color: #183152', 'FY10: $4,556,529' ],
+  ["2011-2012", 1724809, 'fill-color: #183152', 'FY11-FY12 CAD2CAD: $1,724,809' ],
+  //["2012", 1263000, 'fill-color: #183152', 'FY12: $1,263,000' ],
+  ["2013", 1483000, 'fill-color: #183152', 'FY13 CAD2CAD: $1,483,000' ],
+  ["2014", 961000, 'fill-color: #183152', 'FY14 CAD2CAD: $961,000'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR CAD2CAD Investment FY2007-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart22'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart23*****************************************
+
+function drawChart23() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Video Sharing", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  //["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08: $641,196' ],
+  ["2008-2010", 426850, 'fill-color: #183152', 'FY08-FY10 Video Sharing: $426,850' ],
+  //["2009-2010", 1103479, 'fill-color: #183152', 'FY09-FY10: $1,103,479' ],
+  //["2010", 4556529, 'fill-color: #183152', 'FY10: $4,556,529' ],
+  ["2011", 740000, 'fill-color: #183152', 'FY11 Video Sharing: $740,000' ],
+  ["2012", 1009645, 'fill-color: #183152', 'FY12 Video Sharing: $1,009,645' ],
+  ["2013", 2587200, 'fill-color: #183152', 'FY13 Video Sharing: $2,587,200' ],
+  ["2014", 1622810, 'fill-color: #183152', 'FY14 Video Sharing: $1,622,810'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Video Sharing Investment FY2008-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart23'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart24*******************************************
+
+function drawChart24() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "LPRs", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  //["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08: $641,196' ],
+  ["2008", 5159700, 'fill-color: #183152', 'FY08 LPRs: $5,159,700' ],
+  ["2009-2010", 59480, 'fill-color: #183152', 'FY09-FY10 LPRs: $59,480' ],
+  //["2010", 4556529, 'fill-color: #183152', 'FY10: $4,556,529' ],
+  ["2011", 1415000, 'fill-color: #183152', 'FY11 LPRs: $1,415,000' ],
+  ["2012", 1450000, 'fill-color: #183152', 'FY12 LPRs: $1,450,000' ],
+  ["2013", 1600000, 'fill-color: #183152', 'FY13 LPRs: $1,600,000' ],
+  ["2014", 1328000, 'fill-color: #183152', 'FY14 LPRs: $1,328,000'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR License Plate Readers Investment FY2008-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart24'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart25*******************************************
+
+function drawChart25() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "LINX", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  //["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08: $641,196' ],
+  ["2008", 902694, 'fill-color: #183152', 'FY08 LINX: $902,694' ],
+  ["2009", 3094982, 'fill-color: #183152', 'FY09 LINX: $3,094,982' ],
+  ["2010", 2034507, 'fill-color: #183152', 'FY10 LINX: $2,034,507' ],
+  ["2011", 479325, 'fill-color: #183152', 'FY11 LINX: $479,325' ],
+  ["2012", 1938000, 'fill-color: #183152', 'FY12 LINX: $1,938,000' ],
+  ["2013", 2200000, 'fill-color: #183152', 'FY13 LINX: $2,200,000' ],
+  ["2014", 1033000, 'fill-color: #183152', 'FY14 LINX: $1,033,000'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR LINX Investment FY2008-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart25'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart26********************************************
+
+function drawChart26() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "AFIS", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  //["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08: $641,196' ],
+  ["2008", 1123905, 'fill-color: #183152', 'FY08 AFIS: $1,123,905' ],
+  ["2009", 4571666, 'fill-color: #183152', 'FY09 AFIS: $4,571,666' ],
+  ["2010", 3228313, 'fill-color: #183152', 'FY10 AFIS: $3,228,313' ],
+  ["2011", 4165000, 'fill-color: #183152', 'FY11 AFIS: $4,165,000' ],
+  ["2012", 4150000, 'fill-color: #183152', 'FY12 AFIS: $4,150,000' ],
+  ["2013", 2500000, 'fill-color: #183152', 'FY13 AFIS: $2,500,000' ],
+  ["2014", 2000000, 'fill-color: #183152', 'FY14 AFIS: $2,000,000'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR AFIS Investment FY2008-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+    title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart26'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart27***************************************
+
+function drawChart27() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "RITIS", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  //["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08: $641,196' ],
+  //["2008", 1123905, 'fill-color: #183152', 'FY08: $1,123,905' ],
+  ["2009-2010", 1313000, 'fill-color: #183152', 'FY09-FY10 RITIS: $1,313,000' ],
+  //["2010", 3228313, 'fill-color: #183152', 'FY10: $3,228,313' ],
+  ["2011", 2293000, 'fill-color: #183152', 'FY11 RITIS: $2,293,000' ],
+  ["2012", 915000, 'fill-color: #183152', 'FY12 RITIS: $915,000' ],
+  ["2013", 400000, 'fill-color: #183152', 'FY13 RITIS: $400,000' ],
+  ["2014", 550000, 'fill-color: #183152', 'FY14 RITIS: $550,000'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR RITIS Investment FY2009-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart27'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart28*****************************************
+
+function drawChart28() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Text Alert", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  //["2004", 785321, 'fill-color: #183152', 'FY04: $785,321' ],
+  //["2005", 2522895, 'fill-color: #183152', 'FY05: $2,522,895'],
+  //["2006", 1227414, 'fill-color: #183152', 'FY06: $1,227,414' ],
+  //["2007-2008", 641196, 'fill-color: #183152', 'FY07-FY08: $641,196' ],
+  ["2008-2009", 820000, 'fill-color: #183152', 'FY08-FY09 Text Alert: $820,000' ],
+  //["2009-2010", 1313000, 'fill-color: #183152', 'FY09-FY10: $1,313,000' ],
+  ["2010", 1722000, 'fill-color: #183152', 'FY10 Text Alert: $1,722,000' ],
+  ["2011", 875000, 'fill-color: #183152', 'FY11 Text Alert: $875,000' ],
+  ["2012", 875000, 'fill-color: #183152', 'FY12 Text Alert: $875,000' ],
+  ["2013", 1055000, 'fill-color: #183152', 'FY13 Text Alert: $1,055,000' ],
+  ["2014", 2362500, 'fill-color: #183152', 'FY14 Text Alert: $2,362,500'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Text Alert Investment FY2008-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart28'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart29****************************************
+
+function drawChart29() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "Mass Care", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  ["2004", 551148, 'fill-color: #183152', 'FY04 Mass Care: $551,148' ],
+  ["2005", 290543, 'fill-color: #183152', 'FY05 Mass Care: $290,543'],
+  ["2006", 3780833, 'fill-color: #183152', 'FY06 Mass Care: $3,780,833' ],
+  ["2007-2008", 840000, 'fill-color: #183152', 'FY07-FY08 Mass Care: $840,000' ],
+  //["2008-2009", 820000, 'fill-color: #183152', 'FY08-FY09: $820,000' ],
+  ["2009", 1046258, 'fill-color: #183152', 'FY09 Mass Care: $1,046,258' ],
+  ["2010", 1118700, 'fill-color: #183152', 'FY10 Mass Care: $1,118,700' ],
+  ["2011", 2332370, 'fill-color: #183152', 'FY11 Mass Care: $2,332,370' ],
+  ["2012", 525130, 'fill-color: #183152', 'FY12 Mass Care: $525,130' ],
+  ["2013", 306167, 'fill-color: #183152', 'FY13 Mass Care: $306,167' ],
+  ["2014", 272617, 'fill-color: #183152', 'FY14 Mass Care: $272,617'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR Mass Care Investment FY2004-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart29'));
+
+  chart.draw(data, options);
+
+}
+
+//Chart30****************************************
+
+function drawChart30() {
+
+  var data = google.visualization.arrayToDataTable([
+    
+  ["Year", "ESSENCE", {role: 'style'}, {role: 'tooltip'} ],
+  
+  //["2003", 0, 'fill-color: #183152', 'FY03: $0'],
+  ["2004", 590219, 'fill-color: #183152', 'FY04 ESSENCE: $590,219' ],
+  ["2005", 1795808, 'fill-color: #183152', 'FY05 ESSENCE: $1,795,808'],
+  ["2006", 1000000, 'fill-color: #183152', 'FY06 ESSENCE: $1,000,000' ],
+  ["2007", 500000, 'fill-color: #183152', 'FY07 ESSENCE: $500,000' ],
+  ["2008", 126338, 'fill-color: #183152', 'FY08 ESSENCE: $126,338' ],
+  ["2009", 966135, 'fill-color: #183152', 'FY09 ESSENCE: $966,135' ],
+  ["2010", 637418, 'fill-color: #183152', 'FY10 ESSENCE: $637,418' ],
+  ["2011-2012", 424920, 'fill-color: #183152', 'FY11-FY12 ESSENCE: $424,920' ],
+  //["2012", 525130, 'fill-color: #183152', 'FY12: $525,130' ],
+  ["2013", 444920, 'fill-color: #183152', 'FY13 ESSENCE: $444,920' ],
+  ["2014", 318226, 'fill-color: #183152', 'FY14 ESSENCE: $318,226'],
+  //['2015', 0, 'fill-color: #183152', '$0', 0, '#183152','$0']
+]);
+
+  var options = {width:$(window).width() * 0.6, height:450,
+    
+isStacked: true,
+    //title: 'NCR ESSENCE Investment FY2004-FY2014',
+
+    titleTextStyle: {color: '#black',
+          fontName: 'Helvetica',
+          fontSize: 28,
+          bold: 'true',
+          //alignment: 'center',
+          //italics: 'true'
+          },
+           bar: {groupWidth: "85%"},
+    legend: 'none',
+    hAxis: {gridlines: 'none',
+      title: '(move mouse over bars for NCR UASI investment amounts)',
+  },
+    vAxis: {gridlines: 'none'},
+
+    backgroundColor: {
+      'fill': '#F1f2f2',
+        'stroke': 'black',
+        'strokeWidth': 5},
+
+        chartArea: {top: '10%', left: '10%', width: '95%', height: '80%'},
+    
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('Chart30'));
+
+  chart.draw(data, options);
+
+}
+
+function drawVisualization() {
+
+              drawChart1();
+              drawChart2();
+              drawChart3();
+              drawChart4();
+              drawChart5();
+              drawChart6();
+              drawChart7();
+              drawChart8();
+              drawChart9();
+              drawChart10();
+              drawChart11();
+              drawChart19();
+              drawChart20();
+              drawChart21();
+              drawChart22();
+              drawChart23();
+              drawChart24();
+              drawChart25();
+              drawChart26();
+              drawChart27();
+              drawChart28();
+              drawChart29();
+              drawChart30();
+            }
+
+    </script>
+
+    <style>
+
+    body {
+
+      background-color:#F1f2f2;
+      padding-top: 1px;
+    }
+
+    .container {
+      width:100%;
+      margin:0px;
+      padding:0px;
+    }
+
+    h1 {
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 3em;
+      text-align: center;
+      color: #552100;
+            vertical-align:center;
+
+    }
+
+    h2 {
+      font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #552100;
+      vertical-align:center;
+      max-width: 1050px;
+    }
+
+    p {
+      display: block;
+      font-family: Spinoza, Georgia, serif;
+      font-size: 1.4em;
+      text-align: left;
+      color: #12240D;
+      max-width: 1050px;
+    }
+
+    .Personnel {
+      color: #183152;
+    }
+
+    .Interoperability {
+      color: #2980B9;
+    }
+
+    .Equipment {
+      color: #375d81;
+    }
+
+    .Facilities {
+      color: #ABC8E2;
+    }
+
+    .Other {
+      color: #C4D7ED;
+    }
+
+    .ERS {
+      color: #92CDCF;
+    }
+
+    ol {
+      font-family: Spinoza, Georgia, serif;
+      font-size: 1.4em;
+      text-align: left;
+      color: #12240D;
+      max-width: 1050px;
+    }
+
+    .chart{
+      margin-left:20%
+    }
+
+    .div-container{
+      margin-left:20%; 
+      width:60%;
+    }
+
+    .carousel.slide{
+      border-top-style:solid;
+      border-top-width:1px;
+    }
+
+    .carousel-indicators li{
+      border-color:#444444;
+    }
+
+    .carousel-indicators .active{
+      background-color:#444444;
+    }
+    </style>
+  
+  <body>
+
+    <div class='container'>
+
+    <h1>National Capital Region Urban Area Security Initiative: An Investment
+      Overview</h1>
+      <br>
+    <div id="content-container">
+    <div id="carousel-1" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-1" data-slide-to="1"></li>
+    <li data-target="#carousel-1" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="div-container">
+          <h2>NCR Urban Area Security Initiative Awards FY03-FY14</h2>
+          <p>Since FY03, FEMA has awarded the National Capital Region (NCR) more than $665 million in Urban Area Security Initiative (UASI) grant funds, making it the third largest UASI region in the nation (behind New York and Los Angeles). The chart below shows the NCR UASI award amounts by fiscal year. <b>Since FY12, the average annual UASI award as been approximately $52 million.</b></p>
+        </div>
+        <div id='Chart1' class="chart"></div>
+      </div>
+    <div class="item">
+            <div class="div-container">
+
+      <h2>Maryland Specific NCR UASI Awards</h2>
+      <p>In theory, the NCR UASI is designed to support emergency preparedness in each jurisdiction in the region equally: grant funds are awarded to individual jurisdictions, but each jurisdiction manages its project on behalf of the entire region.</p>
+      <p>In reality, many NCR UASI-funded projects are designed to benefit a single jurisdiction or state. The shaded areas in the chart below below show the share of NCR UASI awards that have been awarded directly to Maryland state and local agencies since FY08 and have funded projects that are specific to Maryland.<b> On average, Maryland state agencies and localities have received approximately $9.8 million each year from the NCR UASI since FY08.</b></p>
+        </div>
+
+      <div id='Chart2' class="chart"></div>  
+    </div>
+    <div class="item">
+            <div class="div-container">
+
+      <h2>The District and Virginia Specific NCR UASI Awards</h2>
+      <p>The District and Virginia also receive a share of the NCR UASI that benefits their jurisdictions specifically. The chart below shows their shares of the NCR UASI since FY08 compared to Maryland. <b>Maryland's average annual share of the NCR UASI compares favorably to Virginia's average annual share ($9.9 million) and exceeds the District's average annual share ($6.2 million).</b></p>
+
+      <p>The remaining portion of each annual award is called the "regional" award. These are funds that support programs or projects that are implemented in each NCR jurisdiction and improve emergency preparedness throughout the region equally.</p>
+      </div>
+      <div id='Chart3' class="chart"></div>
+    </div>
+    </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-1" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div id="carousel-2" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-2" data-slide-to="1"></li>
+    <li data-target="#carousel-2" data-slide-to="2"></li>
+    <li data-target="#carousel-2" data-slide-to="3"></li>
+    <li data-target="#carousel-2" data-slide-to="4"></li>
+    <li data-target="#carousel-2" data-slide-to="5"></li>
+    <li data-target="#carousel-2" data-slide-to="6"></li>
+    <li data-target="#carousel-2" data-slide-to="7"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  <br>
+  <div class="item active"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards</h2>
+    <p>Let's take a look at just the NCR UASI awards that are specific to Maryland state agencies and local jurisdictions. The chart below shows the total Maryland Specific amounts by year since FY08.</p>
+
+    </div><div id='Chart4' class="chart"> 
+    </div>
+  </div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: State vs. Local</h2>
+    <p>The majority of these Maryland-specific funds are awarded to local jurisdictions: Montgomery and Prince George's Counties. The chart belows shows the split between state and local jurisdictions by year since FY08.</p>
+
+    </div><div id='Chart5' class="chart"> 
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: Personnel</h2>
+    <p>How do Maryland state and local agencies spend their NCR UASI funds? There are 5 core categories of expenditures. The first is <b>Personnel</b>. This may include training and exercise officers, emergency planners and intelligence analysts.</p>
+
+    </div><div id='Chart6' class="chart"> 
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: Interoperability/Data Sharing</h2>
+    <p>The second category is <b>Interoperability and Data Sharing Equipment</b>. This may include portable radios, radio system infrastructure, CAD-RMS system upgrades, WebEOC upgrades or other communication tools.</p>
+
+    </div><div id='Chart7' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: Response Equipment</h2>
+    <p>The third category is <b>Emergency Response Equipment</b>. This may include personal protective equipment (PPE) and other response equipment for police and fire/EMS departments.</p>
+
+    </div><div id='Chart8' class="chart"> 
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: Facility Upgrades</h2>
+    <p>The fourth category is <b>Facility Upgrades</b>. This may include audio-visual or physical upgrades to Emergency Operation Centers in the region and State.</p>
+
+    </div><div id='Chart9' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: Maryland Emergency Response System</h2>
+    <p>The fifth and final category (in addition to <b>other/miscellaneous allowable expenses</b>) is for the <b>Maryland Emergency Response System (ERS)</b> starting in FY12. This may include personnel,  equipment and training and exercise services that are shared between Montgomery and Prince George's Counties.</p>
+
+    </div><div id='Chart10' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>Maryland Specific NCR UASI Awards: Maryland Emergency Response System</h2>
+    <p>The total FY14 NCR UASI award for Maryland Emergency Response System (ERS) is approximately $6.4 million. The chart below shows the spending categories and amounts for Maryland ERS for its FY14 award. </p>
+
+    </div><div id='Chart11' class="chart">
+</div>
+</div>
+</div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-2" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-2" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div id="carousel-3" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-3" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-3" data-slide-to="1"></li>
+    <li data-target="#carousel-3" data-slide-to="2"></li>
+    <li data-target="#carousel-3" data-slide-to="3"></li>
+    <li data-target="#carousel-3" data-slide-to="4"></li>
+    <li data-target="#carousel-3" data-slide-to="5"></li>
+    <li data-target="#carousel-3" data-slide-to="6"></li>
+    <li data-target="#carousel-3" data-slide-to="7"></li>
+    <li data-target="#carousel-3" data-slide-to="8"></li>
+    <li data-target="#carousel-3" data-slide-to="9"></li>
+    <li data-target="#carousel-3" data-slide-to="10"></li>
+    <li data-target="#carousel-3" data-slide-to="11"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active"><div class="div-container">
+    <h2>NCR UASI Regional Projects: Radio Cache</h2>
+    <p>In addition to the specific NCR UASI awards that Maryland receives, it also participates in and benefits from several regional projects that are shared equally among Maryland, Virginia and the District. </p>
+
+    <p>The first is the NCR Radio Cache, a deployable cache of portable radios and equipment that enhance the region's ability to respond and communicate during an emergency event. <b>Since FY03, the region has invested more than $10.4 million in operating and maintaining the radio cache program.</b></p>
+
+    </div><div id='Chart19' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: NCRNet</h2>
+    <p>The NCRNet connects the region's individual government-run Intranet systems and enables cross-jurisdictional communication when normal Internet service is down or interrupted. <b>Since FY04, the region has invested more than $30 million in operating and maintaining the NCRNet.</b></p>
+
+    </div><div id='Chart20' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: Patient Tracking</h2>
+    <p>Patient tracking equipment allows the region's medical first responders to tag and scan victims in a mass casualty incident, maintain a record of receiving facilities, and assist in family reunification. <b>Since FY04, the region has invested more than $13 million to develop and maintain a patient tracking system.</b></p>
+
+    </div><div id='Chart21' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: CAD-2-CAD</h2>
+    <p>The CAD-2-CAD program integrates fire dispatch systems, allows for automated information sharing, and helps departments decrease response times. It currently operates only in Northern Virginia but is partially expanding to the District and Maryland jurisdictions. <b>Since FY07, the region has invested approximately $6 million to develop and maintain the CAD-2-CAD program.</b></p>
+
+    </div><div id='Chart22' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: Video Sharing</h2>
+    <p>The video sharing program is currently managed by Maryland's fusion center. It provides participating agencies with video sharing hardware and technical support to allow them to share real-time video feeds with response partners during an emergency event. <b>Since FY08, the region has invested approximately $6.4 million to develop and maintain the video sharing program.</b></p>
+
+    </div><div id='Chart23' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: License Plate Readers</h2>
+    <p>The license plate reader (LPR) program has purchased a mix of mobile and fixed license plate readers for the region's law enforcement jurisdictions (including fixed cameras on I-95 in Prince George's County). <b>Since FY08, the region has invested more than $11 million to purchase and maintain license plate reader equipment.</b></p>
+
+    </div><div id='Chart24' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: LINX</h2>
+    <p>The Law Enforcement Information Exchange (LINX) program connects the region's RMS databases and allows law enforcement investigators to conduct cross-jurisdictional searches of criminal records. <b>Since FY08, the region has invested more than $11 million to develop and maintain the LINX program.</b></p>
+
+    </div><div id='Chart25' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: AFIS</h2>
+    <p>The Automated Fingerprint Identification System (AFIS) program provides the regional law enforcement agencies with scanning hardware and technical support to quickly read suspect finger prints and match against criminal records. <b>Since FY08, the region has invested approximately $22 million to develop and maintain the AFIS program.</b></p>
+
+    </div><div id='Chart26' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: RITIS</h2>
+    <p>The Regional Integrated Traffic Incident System (RITIS) is an online traffic map that displays real-time traffic incident data and analytics. <b>Since FY09, the region has invested approximately $5.5 million to develop and maintain RITIS.</b> </p>
+
+    </div><div id='Chart27' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: Text Alert System</h2>
+    <p>This program allows local jurisdictions to push out emergency incident information to residents via text and email messages. <b>Since FY08, the region has invested more than $7 million to develop and maintain the text alert system.</b></p>
+
+    </div><div id='Chart28' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: Mass Care</h2>
+    <p>The region awards UASI funds to the Red Cross to purchase and maintain emergency shelter supplies (cots, blankets, pet shelters, meals, etc.). <b>Since FY04, the region has invested more than $11 million in the Red Cross for mass care and emergency shelter services.</b> </p>
+
+    </div><div id='Chart29' class="chart">
+</div>
+</div>
+<div class="item"><div class="div-container">
+    <h2>NCR UASI Regional Projects: ESSENCE</h2>
+    <p>The region awards UASI funds to the Johns Hopkins University Applied Physics Lab to develop and maintain the NCR ESSENCE (Electronic Surveillance System for the Early Notification of Community-based Epidemics) program. ESSENCE assists public health departments in detecting biological hazards, communicable diseases, and other public health threats. <b>Since FY04, the region has invested approximately $7 million to develop and maintain the NCR ESSENCE.</b> </p>
+
+    </div><div id='Chart30' class="chart">
+</div>
+</div>
+</div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-3" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-3" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+  </div>
+  </body>
+
+
+  <script>
+ /*   $( document ).ready(function() {
+      var count = 0;
+      $("#content-container > .item").each(function(){
+        if(count == 0){
+          $("#content-container").prepend('<div id="carousel-1" class="carousel slide" data-ride="carousel"><!-- Indicators --><ol class="carousel-indicators"><li data-target="#carousel-1" data-slide-to="0" class="active"></li><li data-target="#carousel-example-generic" data-slide-to="1"></li><li data-target="#carousel-1" data-slide-to="2"></li></ol><div class="carousel-inner" role="listbox">');
+        }
+        else if (count==3){
+          $(this).before('</div><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div><div id="carousel-2" class="carousel slide" data-ride="carousel"><!-- Indicators --><ol class="carousel-indicators"><li data-target="#carousel-2" data-slide-to="0" class="active"></li><li data-target="#carousel-2" data-slide-to="1"></li><li data-target="#carousel-2" data-slide-to="2"></li></ol><div class="carousel-inner" role="listbox">');
+        }
+        else if(count == 11){
+                    $(this).before('</div><a class="left carousel-control" href="#carousel-2" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-2" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div><div id="carousel-3" class="carousel slide" data-ride="carousel"><!-- Indicators --><ol class="carousel-indicators"><li data-target="#carousel-3" data-slide-to="0" class="active"></li><li data-target="#carousel-3" data-slide-to="1"></li><li data-target="#carousel-3" data-slide-to="2"></li></ol><div class="carousel-inner" role="listbox">');
+
+        }
+        console.log($(this));
+        count++;
+      });
+      $("#content-container").append('</div><a class="left carousel-control" href="#carousel-3" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-3" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>');
+    });*/
+  </script>
+</html>
